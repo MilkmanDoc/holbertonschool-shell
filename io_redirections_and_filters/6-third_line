@@ -1,2 +1,2 @@
 #!/bin/bash
-./iacta 3
+sed -n '3!d' /iacta
