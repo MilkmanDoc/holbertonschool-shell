@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -n '3!d' /iacta
+awk FNR==3 {print}' my.txt
