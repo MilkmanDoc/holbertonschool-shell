@@ -1,0 +1,2 @@
+#!/bin/bash
+escho "obase=16; $DECIMAL" | bc
