@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10 times
-valid=true
-while [ $valid ]
-do
-echo $count
-if [ $count -eq 10 ];
-then
-break
-fi
-((count++))
-done
+for x in ("Best School"*10)
+	print(x)
