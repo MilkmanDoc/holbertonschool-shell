@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#some comment stuffs
 counter=0
 while [ $counter -lt 10 ]; do
   if [ $counter -eq 8 ]; then
