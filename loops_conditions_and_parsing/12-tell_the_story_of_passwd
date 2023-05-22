@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #notes of the story
 
+
 filename="/etc/passwd"
 
 while IFS=':' read -r username _ userid groupid _ homedir shell; do
