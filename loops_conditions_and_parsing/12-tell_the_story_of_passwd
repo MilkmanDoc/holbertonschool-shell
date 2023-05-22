@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 #note
 
-filename="/etc/passwd"
-
-while IFS=':' read -r username _ userid groupid _ homedir shell; do
-  echo "The user $username is part of the $groupid gang, lives in $homedir and rides $shell."
-  echo -n "User $userid's place is protected by the passcode: "
-  "$(grep -w "$username" /etc/shadow | cut -d':' -f2)"
-  echo "More info about the user here: USER ID INFO"
-  echo
-done < "$filename"
+fcontent="/etc/passwd"
+while IFS= read -r fline
+do
+	luser=$(echo "$fline" | cut -d: -f 1)
+	lgang=$(echo "$fline" | cut -d: -f 4)
+	ldir=$(echo "$fline" | cut -d: -f 6)
+	lrides=$(echo "$fline" | cut -d: -f 7)
+	lplace=$(echo "$fline" | cut -d: -f 3)
+	lpscod=$(echo "$fline" | cut -d: -f 2)
+	lmoinfo=$(echo "$fline" | cut -d: -f 5)
+	echo "The user $luser is part of the $lgang, lives in $ldir and rides $lrides. $lplace's place is protected by the passcode $lpscod, more info about the user here: $lmoinfo"
+done < $fcontent
