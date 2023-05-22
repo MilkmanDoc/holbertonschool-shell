@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # some stuff
+
 hour=0
 minute=1
 counter=0
@@ -18,3 +19,4 @@ while [ $counter -lt 70 ]; do
 
   counter=$((counter+1))
 done | head -n 70
+
