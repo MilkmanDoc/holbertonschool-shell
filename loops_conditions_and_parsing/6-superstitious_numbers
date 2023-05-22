@@ -2,17 +2,22 @@
 # blah blah blah
 counter=1
 while [ $counter -le 20 ]; do
-  if [ $counter -eq 4 ]; then
-    echo "4"
-    echo "bad luck from China"
-  elif [ $counter -eq 9 ]; then
-    echo "9"
-    echo "bad luck from Japan"
-  elif [ $counter -eq 17 ]; then
-    echo "17"
-    echo "bad luck from Italy"
-  else
-    echo $counter
-  fi
+  case $counter in
+    4)
+      echo "4"
+      echo "Bad luck from China"
+      ;;
+    9)
+      echo "9"
+      echo "Bad luck from Japan"
+      ;;
+    17)
+      echo "17"
+      echo "Bad luck from Italy"
+      ;;
+    *)
+      echo $counter
+      ;;
+  esac
   counter=$((counter+1))
 done
