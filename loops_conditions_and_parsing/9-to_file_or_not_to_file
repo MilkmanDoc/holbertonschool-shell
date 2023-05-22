@@ -1,19 +1,14 @@
 #!/usr/bin/env bash
 # notes n things
-file="school"
 
-if [ -e "$file" ]; then
-  echo "school file exists"
-  if [ -s "$file" ]; then
-    echo "school file is not empty"
+for ((i=1; i<=100; i++)); do
+  if (( i % 3 == 0 && i % 5 == 0 )); then
+    echo "FizzBuzz"
+  elif (( i % 3 == 0 )); then
+    echo "Fizz"
+  elif (( i % 5 == 0 )); then
+    echo "Buzz"
   else
-    echo "school file is empty"
+    echo "$i"
   fi
-  if [ -f "$file" ]; then
-    echo "school is a regular file"
-  else
-    :
-  fi
-else
-  echo "school file does not exist"
-fi
+done
