@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#notes of the story
+
+filename="/etc/passwd"
+
+while IFS=':' read -r username _ userid groupid _ homedir shell; do
+  echo "The user $username is part of the $groupid gang, lives in $homedir and rides $shell."
+  echo -n "User $userid's place is protected by the passcode: "
+  grep -w "$username" /etc/shadow | cut -d':' -f2
+  echo "More info about the user here: USER ID INFO"
+  echo
+done < "$filename"
