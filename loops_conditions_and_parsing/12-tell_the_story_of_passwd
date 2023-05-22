@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#notes of the story
+#note
 
 filename="/etc/passwd"
 
