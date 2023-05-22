@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # for the love of god just push
-i=0
-until [[ $i -eq 10 ]]
-do
-	echo "Best School"
-	((i++))
+counter=0
+until [ $counter -eq 10 ]; do
+  echo "Best School"
+  counter=$((counter+1))
+done
