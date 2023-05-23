@@ -1,17 +1,10 @@
 #!/usr/bin/env bash
 #notes
 
-# Get the process tree using pstree command
-process_tree=$(pstree -p)
+# Get the process tree using ps command
+process_tree=$(ps axo pid,ppid,command)
 
 # Display the process tree with hierarchy
 echo "Process Tree:"
-echo "$process_tree"
+echo "$process_tree" | awk 'BEGIN{printf "%-10s %-10s %-s\n", "PID", "PPID", "COMMAND"} {printf "%-10s %-10s %-s\n", $1, $2, $3}'
 echo
-
-# Get the list of all processes
-all_processes=$(ps -eo pid,user,cmd --sort=user)
-
-# Display the list of processes in a user-oriented format
-echo "Running Processes:"
-echo "$all_processes"
